@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login & Register</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <div class="container">
+        <div class="form-container">
+            <div class="form-toggle">
+                <button class="active" id="login-toggle">Login</button>
+                <button id="register-toggle">Register</button>
+            </div>
+
+            <!-- Login Form -->
+            <div class="form" id="login-form">
+                <h2>Login</h2>
+                <form>
+                    <div class="input-group">
+                        <label for="login-ID Number">ID Number</label>
+                        <input type="ID Number" id="login-ID Number" name="login-ID Number" required>
+                    </div>
+                    <div class="input-group">
+                        <label for="login-password">Password</label>
+                        <input type="password" id="login-password" name="login-password" required>
+                    </div>
+                    <button type="submit" class="submit-btn">Login</button>
+                </form>
+            </div>
+
+            <!-- Register Form -->
+            <div class="form" id="register-form">
+                <h2>Register</h2>
+                <form>
+                    <div class="input-group">
+                        <label for="register-id">ID Number</label>
+                        <input type="text" id="register-id" name="register-id" required>
+                    </div>
+                    <div class="input-group">
+                        <label for="register-name">Name</label>
+                        <input type="text" id="register-name" name="register-name" required>
+                    </div>
+                    <div class="input-group">
+                        <label for="register-phone">Phone Number</label>
+                        <input type="tel" id="register-phone" name="register-phone" required>
+                    </div>
+                    <div class="input-group">
+                        <label for="register-email">Email</label>
+                        <input type="email" id="register-email" name="register-email" required>
+                    </div>
+                    <div class="input-group">
+                        <label for="register-password">Password</label>
+                        <input type="password" id="register-password" name="register-password" required>
+                    </div>
+                    <div class="input-group">
+                        <label for="register-confirm-password">Confirm Password</label>
+                        <input type="password" id="register-confirm-password" name="register-confirm-password" required>
+                    </div>
+                    <button type="submit" class="submit-btn">Register</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const loginToggle = document.getElementById('login-toggle')
+        
+        const registerToggle = document.getElementById('register-toggle');
+        const loginForm = document.getElementById('login-form');
+        document.getElementById('login-form').addEventListener('submit', function(event) {
+        event.preventDefault(); // Prevent default form submission
+
+        // Simulate successful login
+        // In real life, you’d validate credentials with the server
+
+        // Redirect to home page
+        window.location.href = 'index.html'; // Change this to your actual homepage URL
+    });
+        const registerForm = document.getElementById('register-form');
+
+        loginToggle.addEventListener('click', () => {
+            loginForm.style.display = 'block';
+            registerForm.style.display = 'none';
+            loginToggle.classList.add('active');
+            registerToggle.classList.remove('active');
+    
+        });
+
+        registerToggle.addEventListener('click', () => {
+            registerForm.style.display = 'block';
+            loginForm.style.display = 'none';
+            registerToggle.classList.add('active');
+            loginToggle.classList.remove('active');
+        });
+
+        // Default to show login form
+        loginForm.style.display = 'block';
+        registerForm.style.display = 'none';
+    </script>
+
+</body>
+</html> 
